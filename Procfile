@@ -1,1 +1,1 @@
-web: gunicorn mapi_website.wsgi
+web: gunicorn mapi_website\mapi_website.wsgi
