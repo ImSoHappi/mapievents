@@ -1,0 +1,1 @@
+web: gunicorn mapi_website.wsgi
