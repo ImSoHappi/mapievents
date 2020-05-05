@@ -1,0 +1,31 @@
+//VARIABLES PARA EL BACKGROUND //
+$color-background: #f5f6fa;
+$scolor-background: #ecf0f1;
+
+//VARIABLES PARA EL NAV //
+$tamañoNav: 10vh;
+$colorNavP: #2c3e50;
+$colorNavS: #2d3436;
+$displayF: flex;
+$withNavLink: 50%;
+$heightNavLink: 100%;
+$maxScreen:768px;
+$positionItems: center;
+$circleInitial: circle(100px at 100% -15%);
+$circleOpen: circle(1500px at 90% -10%);
+
+// VARIABLES PARA PLANTILLAS RESPONSIVE DESIGN //
+$grid-columns: 12;
+$grid-max-width: 1200px;
+$breakpoint-small: "only screen and (min-width: 0px)";
+$breakpoint-medium: "only screen and (min-width: 768px)";
+$breakpoint-large: "only screen and (min-width: 1008px)";
+$breakpoint-xl: "only screen and (min-width: 1300px)";
+
+//VARIABLES PARA EL FOOTER DESIGN //
+$color-footer: #2c3e50;
+$color-footers: #2c3e50;
+$height-footer: 50px;
+
+//VARIABLES PARA DISEÑO DE SLIDERS //
+$color-slider:#2c3e50; 
