@@ -5,3 +5,4 @@ libsass
 Pillow
 psycopg2
 gunicorn
+whitenoise
