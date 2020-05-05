@@ -4,3 +4,4 @@ django-sass-processor
 libsass
 Pillow
 psycopg2
+gunicorn
