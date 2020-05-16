@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
     <link href="{% static 'https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap' %}" rel="stylesheet">
     <link rel="stylesheet" href="{% sass_src 'scss/main.scss' %}">
     <!-- Libreria para los cluster -->
@@ -50,9 +50,11 @@
             <div class="footer-bottom">&copy; Citt Maipu | Designed by Los de Colina 5</div>
         </div>
 
+        
+
+
     <script src="{% static 'js/circle.js' %}"></script>
     <script src="{% static 'js/map.js' %}"></script>
-    
     <script>
         window.onload = () =>  {
             initMap();

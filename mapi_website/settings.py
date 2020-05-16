@@ -139,5 +139,5 @@ MEDIA_URL = '/media/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Django Sass
-SASS_PROCESSOR_ROOT = os.path.join(BASE_DIR,'static')
+SASS_PROCESSOR_ROOT = os.path.join(BASE_DIR,'static_sass')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
