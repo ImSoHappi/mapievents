@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
     <link href="{% static 'https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap' %}" rel="stylesheet">
     <link rel="stylesheet" href="{% sass_src 'scss/main.scss' %}">
     <!-- Libreria para los cluster -->
@@ -30,86 +30,28 @@
             <li><a href="#">Sobre Nosotros</a></li>
         </ul>
     </nav>
-
-        <div id="map" class="col-md-12 center">
-        </div>
-
-            
-
-            <!-- <div class="post-slider">
-                <h1 class="slider-title">Proximos Eventos</h1>
-                <i class="fas fa-chevron-left prev"></i>
-                <i class="fas fa-chevron-right next"></i> 
-
-                <div class="post-wrapper">
-                    <div class="post">
-                        <img src="{% static 'img/lol.jpg' %}" alt="imagen pokemon" class="slider-image">
-                        <div class="post-info">
-                            <h4><a href="#">Ubicación</a></h4>
-                            <i class="far fa-user">Fecha de Evento</i>
-                            &nbsp;
-                            <i class="far fa-calendar">Marzo 8, 2030</i>
-                        </div>
-                    </div>
-
-                    <div class="post">
-                        <img src="{% static 'img/greninja.jpg' %}" alt="imagen pokemon" class="slider-image">
-                        <div class="post-info">
-                            <h4><a href="#">Ubicación</a></h4>
-                            <i class="far fa-user">Fecha de Evento</i>
-                            &nbsp;
-                            <i class="far fa-calendar">Marzo 8, 2030</i>
-                        </div>
-                    </div>
-
-                    <div class="post">
-                        <img src="{% static 'img/umbreon.jpg' %}" alt="imagen pokemon" class="slider-image">
-                        <div class="post-info">
-                            <h4><a href="#">Ubicación</a></h4>
-                            <i class="far fa-user">Fecha de Evento</i>
-                            &nbsp;
-                            <i class="far fa-calendar">Marzo 8, 2030</i>
-                        </div>
-                    </div>
-
-                    <div class="post">
-                        <img src="{% static 'img/futbol.jpg' %}" alt="imagen pokemon" class="slider-image">
-                        <div class="post-info">
-                            <h4><a href="#">Ubicación</a></h4>
-                            <i class="far fa-user">Fecha de Evento</i>
-                            &nbsp;
-                            <i class="far fa-calendar">Marzo 8, 2030</i>
-                        </div>
-                    </div>
-
-                    <div class="post">
-                        <img src="{% static 'img/xerneas.jpg' %}" alt="imagen pokemon" class="slider-image">
-                        <div class="post-info">
-                            <h4><a href="#">Ubicación</a></h4>
-                            <i class="far fa-user">Fecha de Evento</i>
-                            &nbsp;
-                            <i class="far fa-calendar">Marzo 8, 2030</i>
-                        </div>
-                    </div>
+        
+        <div class="page-wrapper">
+            <!-- Mapa De Google -->
+            <div id="map" class="col-xl-12"></div>
+            <!-- Container del Panel de Eventos -->
+            <div class="container">
+                <div class="sidePanel" id="menuPanel">
+                    <a href="#">Click Para más</a>
+                    <a href="#" id="closePanel" class="closebtn" onclick="cerrarPanel()">&times;</a>
+                </div>
+    
+                <div class="panelContent">
                     
                 </div>
-            </div> -->
+                
+            </div>
 
-        <!-- <div class="col-sm-1" style="background-color: chartreuse;"></div>
-        <div class="col-m-4" style="background-color: chartreuse;"> </div>
-        <div class="col-m-7" style="background-color: chartreuse;"> </div> -->
-
-
-    <div class="footer">
-        <div class="footer-bottom">
-            &copy; Citt Maipu | Designed by Álvaro Peñaloza
+            <div class="footer-bottom">&copy; Citt Maipu | Designed by Los de Colina 5</div>
         </div>
-    </div>
 
-    <!--Jquery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
-    <!-- Slick Carosuel Jquery -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+        
+
 
     <script src="{% static 'js/circle.js' %}"></script>
     <script src="{% static 'js/map.js' %}"></script>
