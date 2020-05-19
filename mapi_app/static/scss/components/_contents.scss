@@ -37,6 +37,8 @@ img{
     background: $colorNavP;
     background: linear-gradient(-120deg, $colorNavS, $colorNavP);
     z-index: 2;
+    width: $tamañoNavWidth;
+    position: fixed;
 }
 
 .nav-links{
@@ -151,8 +153,10 @@ img{
     top: 0vh;
     left: 0vh;
     bottom: 0vh;
-    height: 96vh;
+    height: 96%;
     position: absolute;
+    z-index: 0;
+    overflow: hidden;
 }
 
 #controlText{
@@ -198,6 +202,7 @@ img{
         left: 0px;
         padding-top: 5px;
         height: 4vh;
+        display: block;
     }
 
 //****** CODIGO PANEL LATERAL EVENTOS ******//
@@ -214,9 +219,10 @@ img{
     left: 0px;
     height: 86%;
     width: 0px;
-    background: linear-gradient(-120deg,#ecf0f1,#bdc3c7);
+    background: linear-gradient(-120deg,#dcdde1,#f5f6fa);
+    opacity: 80%;
     overflow-x: hidden;
-    transition: all .5s;
+    transition: all 1s;
     z-index: 1;
 
     a{
