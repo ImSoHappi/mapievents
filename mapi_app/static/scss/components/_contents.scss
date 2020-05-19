@@ -151,8 +151,8 @@ img{
     top: 0vh;
     left: 0vh;
     bottom: 0vh;
-    height: 86vh;
-    position: relative;
+    height: 96vh;
+    position: absolute;
 }
 
 #controlText{
@@ -217,6 +217,7 @@ img{
     background: linear-gradient(-120deg,#ecf0f1,#bdc3c7);
     overflow-x: hidden;
     transition: all .5s;
+    z-index: 1;
 
     a{
         padding: 8px 8px 8px 64px;
