@@ -34,18 +34,40 @@
         <div class="page-wrapper">
             <!-- Mapa De Google -->
             <div id="map" class="col-xl-12"></div>
+            
             <!-- Container del Panel de Eventos -->
-            <div class="container">
                 <div class="sidePanel" id="menuPanel">
-                    <a href="#">Click Para más</a>
+                    <!-- <a href="#">Click Para más</a> -->
                     <a href="#" id="closePanel" class="closebtn" onclick="cerrarPanel()">&times;</a>
-                </div>
-    
-                <div class="panelContent">
+
+                    <div class="panelContent">
+
+                        <div class="headerPanel"><h2>Game Fest Maipu 2020</h2></div>
+                        <div class="container" id="imgPanel"><img src="{% static '/img/gameFest.jpg' %}" alt="imgEvento"></div>
+                        <div class="contentPanel col-sm-12">
+                            <h3>Fecha del Evento</h3>
+                            <br>
+                            <p>21/05/3006</p>
+                            <br>
+                            <h3>Hora del Evento</h3>
+                            <br>
+                            <p>14:30 - 18:30</p>
+                            <br>
+                            <h3>Ubicación</h3> 
+                            <br>
+                            <p>En tu Raja</p>
+                            <br>
+                            <h3>¿De que trata?</h3>
+                            <br>
+                            <p>Un evento 100% digital que se celebrará a lo largo de cuatro meses. Ayer se anunció el Summer Game Fest, una "celebración totalmente digital de los consumidores" de videojuegos de cuatro meses de duración, con "noticias, eventos ingame y contenido jugable gratuito" de las compañías más importantes del sector</p>
+                        </div>
+                            
+                    </div>
                     
+
+                   
+
                 </div>
-                
-            </div>
 
             <div class="footer-bottom">&copy; Citt Maipu | Designed by Los de Colina 5</div>
         </div>
@@ -53,9 +75,8 @@
         
 
 
-    <script src="{% static 'js/circle.js' %}"></script>
-    <script src="{% static 'js/map.js' %}"></script>
-    
+    <script src="static/js/circle.js"></script>
+    <script src="static/js/map.js"></script>
     <script>
         window.onload = () =>  {
             initMap();

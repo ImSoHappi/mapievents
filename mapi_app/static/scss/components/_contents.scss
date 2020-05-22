@@ -150,10 +150,11 @@ img{
 //****** CODIGO DISEÑO GOOGLE MAP ******//
 #map{
     background: royalblue;
+    margin-top: 10vh;
     top: 0vh;
     left: 0vh;
     bottom: 0vh;
-    height: 96%;
+    height: 86%;
     position: absolute;
     z-index: 0;
     overflow: hidden;
@@ -220,7 +221,7 @@ img{
     height: 86%;
     width: 0px;
     background: linear-gradient(-120deg,#dcdde1,#f5f6fa);
-    opacity: 80%;
+    opacity: 95%;
     overflow-x: hidden;
     transition: all 1s;
     z-index: 1;
@@ -243,10 +244,25 @@ img{
     top: 0px;
     right: 25px;
     font-size: 36px;
-    margin-left: 50vh;
 }
 
 .closebtn:active{
     background: rgba(0,0,0,0);
+}
+
+.headerPanel{
+    margin-top: 7vh;
+    text-align: center;
+}
+
+#imgPanel{
+    padding-top: 5%;
+    margin-left: 3%;
+    height: 45vh;
+    width: 94%;
+}
+
+.contentPanel{
+    margin-top: 3%;
 }
 
