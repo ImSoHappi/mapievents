@@ -1,4 +1,4 @@
-var map;
+var map, markerEvents, countCenter = true;
 var directionsService, directionsRenderer;
 var miubicacion, interval, markerGlobal;
 var InforObj = [], htmlGoogle;
@@ -57,7 +57,7 @@ function CenterControl(controlDiv) {
 function initMap() {
   directionsService = new google.maps.DirectionsService();
   directionsRenderer = new google.maps.DirectionsRenderer();
-
+  
   // Centra el mapa en Maipu
   map = new google.maps.Map(
     document.getElementById("map"), {zoom: 6.75, center: {lat: -33.2196658, lng: -70.6806571},
@@ -92,12 +92,14 @@ function initMap() {
 function addEvents(){
   for (var i = 0; i < events.length; i++) {
     // var contentString = '<div id="content"><h1>'+ events[i].eventName +'</h1><p>'+ events[i].eventDescrip +'</p> <p>'+ events[i].id +'</p> </div><button onClick="calcRoute('+ i +');">Ver Camino</button> <button id="btnPanel" onClick="openPanel('+i+')">Ver Más</button>  <button id="btnCerrar" onClick="cerrarPanel()">Cerrar</button>';
-    const markerEvents = new google.maps.Marker({
+    markerEvents = new google.maps.Marker({
         id: events[i].id,
         position: events[i].LatLng[0],
         animation: google.maps.Animation.DROP,
-        map: map
+        map: map 
     });
+
+    markerEvents.setAnimation(google.maps.Animation.BOUNCE)
 
     // const infowindow = new google.maps.InfoWindow({
     //     content: contentString,
@@ -109,6 +111,7 @@ function addEvents(){
       // document.getElementById("menuPanel").innerHTML=contentString;
     });
   }
+  
 }
 
 function abrirPanel(){
@@ -132,7 +135,7 @@ function initGps()
     interval = setInterval(function(){   
       if (navigator.geolocation)
       {
-      navigator.geolocation.getCurrentPosition(updatePosition,showError);   
+      navigator.geolocation.getCurrentPosition(updatePosition,showError);
       }
       else{
         clearInterval(interval)
@@ -185,6 +188,14 @@ function updateGps(miubicacion){
   }     
   markerGps.setMap(map);
   this.miubicacionMarker = markerGps;
+  
+  if(countCenter)
+  {
+    initialLocation = new google.maps.LatLng(miubicacion.lat, miubicacion.lng);
+    map.setCenter(initialLocation);
+    map.setZoom(16);
+    countCenter =  false;  
+  }  
 }
 
 function calcRoute(i) {  
