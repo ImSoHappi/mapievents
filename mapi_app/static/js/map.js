@@ -41,7 +41,7 @@ function addEvents(){
 
     for (var i = 0; i < events.length; i++) {       
 
-      LatLng = [{lat: parseFloat(events[i].longitude), lng: parseFloat(events[i].latitude))}]
+      LatLng = [{lat: parseFloat(events[i].longitude), lng: parseFloat(events[i].latitude)}]
 
       markerEvents = new google.maps.Marker({
           id: events[i].id,
