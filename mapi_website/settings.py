@@ -80,10 +80,10 @@ WSGI_APPLICATION = 'mapi_website.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'desec9i7ufsjn6',
-        'USER': 'salcxhilxwaztx',
-        'PASSWORD': '7a2d8d9a74ce8c0d4ebd0a1f530a4529a47657686f1e4d5540f99a3fd1feaf46',
-        'HOST': 'ec2-34-232-147-86.compute-1.amazonaws.com',
+        'NAME': 'd7fpdp2euudhnq',
+        'USER': 'anawivhxsscyzv',
+        'PASSWORD': '0afcb92a8021efa15d4921d44afccad6442795b258c2fb0bf29592479ab15730',
+        'HOST': 'ec2-52-44-55-63.compute-1.amazonaws.com',
         'PORT': '5432'
     }
 }
