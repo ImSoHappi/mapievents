@@ -35,7 +35,7 @@ function initMap() {
 function addEvents(){
   var groupMarkers = [];
   var markerEvents;
-  fetch('http://127.0.0.1:8000/api/events/list')
+  fetch('/api/events/list')
   .then( res => res.json())
   .then(events => {
 
