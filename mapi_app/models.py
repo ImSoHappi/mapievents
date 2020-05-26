@@ -44,6 +44,7 @@ class Commune(models.Model):
 class Event_type(models.Model):
     event_type_name = models.CharField(max_length = 255, null = False, default = '')
     event_type_description = models.CharField(max_length = 255, null = True, default = '')
+    #Agregar icono
 
     def __str__(self):
         return self.event_type_name
@@ -51,6 +52,7 @@ class Event_type(models.Model):
 class Workshop_type(models.Model):
     workshop_type_name = models.CharField(max_length = 255, null = False, default = '')
     workshop_type_description = models.CharField(max_length = 255, null = True, default = '')
+    #agregar icono
 
     def __str__(self):
         return self.workshop_type_name
@@ -80,8 +82,8 @@ class Event(models.Model):
     event_name = models.CharField(max_length = 255, null = False, default = 'Sin nombre')
     event_address = models.CharField(max_length = 500, null = False, default = 'Sin indicar')
     image_route = models.ImageField(upload_to = 'events/%Y/%m/%d', blank = True, null = True)
-    event_coordinates_latitude = models.CharField(max_length = 100, null = False, blank = False)
     event_coordinates_longitude = models.CharField(max_length = 100, null = False, blank = False)
+    event_coordinates_latitude = models.CharField(max_length = 100, null = False, blank = False)
     event_quotas = models.IntegerField(null = False, blank = False, default = -1)
     event_description = models.CharField(max_length = 500, null = True, blank = True, default = 'Sin descripción')
     event_start_date = models.DateField(auto_now = False, auto_now_add = True, null = False)
@@ -103,9 +105,9 @@ class Event(models.Model):
 class Workshop(models.Model):
     workshop_name = models.CharField(max_length = 255, null = False, default = 'Sin nombre')
     workshop_address = models.CharField(max_length = 500, null = False, default = 'Sin indicar')
-    image_route = models.ImageField(upload_to = 'events/%Y/%m/%d', blank = True, null = True)
-    workshop_coordinates_latitude = models.CharField(max_length = 100, null = False, blank = False)
+    image_route = models.ImageField(upload_to = 'workshops/%Y/%m/%d', blank = True, null = True)
     workshop_coordinates_longitude = models.CharField(max_length = 100, null = False, blank = False)
+    workshop_coordinates_latitude = models.CharField(max_length = 100, null = False, blank = False)
     workshop_quotas = models.IntegerField(null = False, blank = False, default = -1)
     workshop_description = models.CharField(max_length = 500, null = True, blank = True, default = 'Sin descripción')
     workshop_days = models.CharField(max_length = 13, null = False, blank = False, default = 'Sin especificar')
@@ -123,13 +125,14 @@ class Workshop(models.Model):
 class Entertainment_areas(models.Model):
     area_name = models.CharField(max_length = 255, null = False, default = 'Sin nombre')
     area_address = models.CharField(max_length = 500, null = False, default = 'Sin indicar')
-    image_route = models.ImageField(upload_to = 'events/%Y/%m/%d', blank = True, null = True)
-    area_coordinates_latitude = models.CharField(max_length = 100, null = False, blank = False)
+    image_route = models.ImageField(upload_to = 'areas/%Y/%m/%d', blank = True, null = True)
     area_coordinates_longitude = models.CharField(max_length = 100, null = False, blank = False)
+    area_coordinates_latitude = models.CharField(max_length = 100, null = False, blank = False)
     area_description = models.CharField(max_length = 500, null = True, blank = True, default = 'Sin descripción')
     area_days = models.CharField(max_length = 13, null = False, blank = False, default = 'Sin especificar')
     area_available = models.IntegerField(null = False, default = 1, choices = available)
     area_commune = models.ForeignKey(Commune, on_delete = models.SET_NULL, null = True, default = None)
+    #Agregar horario
 
     def __str__(self):
         return self.area_name
