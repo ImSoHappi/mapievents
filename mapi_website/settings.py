@@ -80,11 +80,11 @@ WSGI_APPLICATION = 'mapi_website.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'mapi_db',
-        'USER': 'postgres',
-        'PASSWORD': 'Citt.2020',
-        'HOST': 'localhost',
-        'PORT': ''
+        'NAME': 'd6eumk88dfc71m',
+        'USER': 'fnfsqxbhdgayjc',
+        'PASSWORD': '3db09639a745a47f87a52386d33f0a1f1d085090ff01075aae45fbc578597dd2',
+        'HOST': 'ec2-52-71-55-81.compute-1.amazonaws.com',
+        'PORT': '5432'
     }
 }
 
