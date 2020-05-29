@@ -3,17 +3,23 @@
 <html lang="es">
 
 <head>
+    <!-- Experimento de favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="static/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="static/img/favicon/site.webmanifest">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no">
     <link href="{% static 'https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap' %}" rel="stylesheet">
     <link rel="stylesheet" href="{% sass_src 'scss/main.scss' %}">
+    <!-- Libreria para los iconos -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Libreria para los cluster -->
-    <script src="https://unpkg.com/@google/markerclustererplus@4.0.1/dist/markerclustererplus.min.js"></script>
-    <!-- Importa la api key -->
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATgmmy8p5H9y-vd5yLC3dzlDNEMrRJ7Tc">
     </script>
-    <title>Document</title>
+    <title>Mapi</title>
 </head>
 <body>
     <nav class="initialNav">
@@ -74,7 +80,6 @@
             <div class="footer-bottom">&copy; Citt Maipu | Designed by Los de Colina 5</div>
         </div>
 
-        
 
 
     <!-- Replace following script src -->

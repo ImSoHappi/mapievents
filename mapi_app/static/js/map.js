@@ -22,12 +22,52 @@ function initMap() {
     disableDefaultUI: true,
     zoomControl: true,
     mapTypeControl: true,
+    mapTypeControlOptions: {
+      mapTypeIds: ['styleMap', 'satellite']
+    },
     streetViewControl: true,
   });
 
   directionsRenderer.setMap(map);
-  map.mapTypes.set('styleMap', new google.maps.StyledMapType(styleMap, { name: 'My Style' }));
+
+  map.mapTypes.set('styleMap', new google.maps.StyledMapType(styleMap, { name: 'Mapi Map' }));
+
+  var centerControlDiv = document.createElement('div');
+  var centerControl = new CenterControl(centerControlDiv, map);
+
+  centerControlDiv.index = 1;
+  map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(centerControlDiv);
+
   addEvents()
+}
+
+// Funcion para crear el boton de centrar, se crea el div contenedor, y un div dentro con el texto para mayor personalizacion
+
+function CenterControl(controlDiv, map) {
+
+  var centerControl = document.createElement('div');
+  centerControl.style.backgroundColor = '#fff';
+  centerControl.style.border = '2px solid #fff';;
+  centerControl.style.borderRadius = '3px';
+  centerControl.style.boxShadow = '0 2px 6px rgba(0,0,0,.3)';
+  centerControl.style.cursor = 'pointer';
+  centerControl.style.marginBottom = '22px';
+  centerControl.style.marginRight = '10px';
+  centerControl.style.textAlign = 'center';
+  centerControl.title = 'Pincha el boton para centrar tu ubicacion';
+  controlDiv.appendChild(centerControl);
+
+  var centercControlText = document.createElement('div');
+  centercControlText.style.color = 'rgb(25,25,25)';
+  centercControlText.style.fontFamily = 'Roboto,Arial,sans-serif';
+  centercControlText.style.fontSize = '16px';
+  centercControlText.style.lineHeight = '38px';
+  centercControlText.innerHTML = "<i class=material-icons style=font-size:36px>gps_fixed</i>";
+  centerControl.appendChild(centercControlText);
+
+  centerControl.addEventListener('click', function() {
+    map.setCenter(miubicacion);
+  });
 }
 
 
@@ -35,7 +75,7 @@ function initMap() {
 function addEvents(){
   var groupMarkers = [];
   var markerEvents;
-  fetch('api/events/list')
+  fetch('http://127.0.0.1:8000/api/events/list')
   .then( res => res.json())
   .then(events => {
 
@@ -51,7 +91,7 @@ function addEvents(){
       });
 
       markerEvents.addListener('click', function () {
-        abrirPanel();
+        openPanel();
       });
       groupMarkers.push(markerEvents)
     }
@@ -63,7 +103,7 @@ function addEvents(){
 
 
 // Funcion que abre y cierra la tarjeta de evento al hacerle click
-function abrirPanel(){
+function openPanel(){
   document.getElementById("menuPanel").style.width="100%";
 }
 function cerrarPanel(){
@@ -102,7 +142,7 @@ function showError(error){
   switch(error.code) 
     {
     case error.PERMISSION_DENIED:
-      mes="Por favor concede permisos de GPS para acceder a toda la funcionalidad del mapa";
+      mes="Por favor activa GPS para acceder a toda la funcionalidad del mapa";
       break;
     case error.POSITION_UNAVAILABLE:
       mes="La posicion esta inhabilitada";
