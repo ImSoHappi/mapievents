@@ -307,6 +307,31 @@ html, body {
   right: 25px;
   font-size: 36px; }
 
+.rightPanel {
+  margin-top: 97px;
+  height: 86%;
+  width: 0px;
+  background: linear-gradient(-120deg, #dcdde1, #f5f6fa);
+  opacity: 85%;
+  overflow-x: hidden;
+  transition: all 1s;
+  z-index: 1;
+  float: right; }
+  .rightPanel a {
+    padding: 8px 8px 8px 64px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #2d3436;
+    display: block; }
+
+.rightPanel a:hover {
+  color: #2c3e50; }
+
+.rightPanel .closebtn {
+  top: 0px;
+  right: 25px;
+  font-size: 36px; }
+
 .closebtn:active {
   background: rgba(0, 0, 0, 0); }
 
@@ -321,6 +346,154 @@ html, body {
   width: 94%; }
 
 .contentPanel {
-  margin-top: 3%; }
+  margin-top: 10%; }
+
+#iconGps, #iconEvents {
+  width: 36px;
+  height: 36px; }
+
+#openEventsControl {
+  background-color: #fff;
+  border: 2px solid #fff;
+  border-radius: 3px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  margin-bottom: 30px;
+  margin-right: 10px; }
+
+#searchBarControl {
+  margin-top: 8px;
+  padding: 0;
+  height: 38px;
+  margin-left: 8px; }
+
+#searchBarButton {
+  cursor: pointer;
+  height: 38px;
+  background-color: whitesmoke;
+  border-color: whitesmoke;
+  border-left-color: gray;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  width: 15%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3); }
+
+#searchBarInput {
+  height: 38px;
+  border: 2px solid #fff;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  width: 60%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  font-size: 16px; }
+
+#centerControl, #obtainGpsControl {
+  background-color: #fff;
+  border: 2px solid #fff;
+  border-radius: 3px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  margin-bottom: 22px;
+  margin-right: 10px; }
+
+@media only screen and (max-width: 550px) {
+  #searchBarButton {
+    width: 25%; }
+  #searchBarInput {
+    width: 50%; } }
+
+@media only screen and (min-width: 900px) {
+  #searchBarButton {
+    width: 80px; }
+  #searchBarInput {
+    width: 400px;
+    font-size: 24px; } }
+
+#listEvents {
+  border: 2px solid #fff;
+  border-radius: 3px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  float: left;
+  width: 25%;
+  margin-left: 6.25%;
+  margin-bottom: 6.25%;
+  height: 50%;
+  text-align: center;
+  list-style-type: none; }
+
+#listTittle {
+  padding: 5px; }
+
+.btnFilter.active {
+  background-color: #666;
+  color: white; }
+
+.filterDiv {
+  float: left;
+  background-color: #2196F3;
+  color: #ffffff;
+  width: 100px;
+  line-height: 100px;
+  text-align: center;
+  margin: 2px;
+  display: none; }
+
+#detailEvent {
+  text-align: center; }
+
+#detailEvent h1 {
+  font-size: 52px;
+  margin-bottom: 10px;
+  margin-top: 10px; }
+
+#detailEvent img {
+  width: 50%;
+  height: 50%;
+  margin-bottom: 10px; }
+
+#detailEvent p {
+  font-size: 24px;
+  margin-bottom: 5px; }
+
+#detailEvent #starsImg {
+  width: 100px;
+  height: 20px;
+  margin: 0; }
+
+.dropbtn {
+  cursor: pointer;
+  height: 38px;
+  background-color: whitesmoke;
+  width: 100px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  margin-right: 10px; }
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: gray; }
+
+.dropdown {
+  display: inline-block; }
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: whitesmoke;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  width: 100px;
+  margin-top: 12px; }
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block; }
+
+.show {
+  display: block; }
+
+#cordsFilter {
+  display: none; }
 
 /*# sourceMappingURL=main.css.map */
