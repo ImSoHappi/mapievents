@@ -11,7 +11,6 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no">
-    <link href="{% static 'https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap' %}" rel="stylesheet">
     <link rel="stylesheet" href="{% sass_src 'scss/main.scss' %}">
     <!-- Libreria para los iconos -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -44,38 +43,37 @@
             <!-- Container del Panel de Eventos -->
                 <div class="sidePanel" id="menuPanel">
                     <!-- <a href="#">Click Para más</a> -->
-                    <a href="#" id="closePanel" class="closebtn" onclick="cerrarPanel()">&times;</a>
+                    <a href="#" id="closePanel" class="closebtn" onclick="closePanel()">&times;</a>
 
                     <div class="panelContent">
-
-                        <div class="headerPanel"><h2>Game Fest Maipu 2020</h2></div>
-                        <div class="container" id="imgPanel"><img src="{% static '/img/gameFest.jpg' %}" alt="imgEvento"></div>
-                        <div class="contentPanel col-sm-12">
-                            <h3>Fecha del Evento</h3>
-                            <br>
-                            <p>21/05/3006</p>
-                            <br>
-                            <h3>Hora del Evento</h3>
-                            <br>
-                            <p>14:30 - 18:30</p>
-                            <br>
-                            <h3>Ubicación</h3> 
-                            <br>
-                            <p>En tu Raja</p>
-
-                            <br>
-
-                            <h3>¿De que trata?</h3>
-                            <br>
-                            <p>Un evento 100% digital que se celebrará a lo largo de cuatro meses. Ayer se anunció el Summer Game Fest, una "celebración totalmente digital de los consumidores" de videojuegos de cuatro meses de duración, con "noticias, eventos ingame y contenido jugable gratuito" de las compañías más importantes del sector</p>
-                        </div>
                             
                     </div>
-                    
-
-                   
 
                 </div>
+
+                <div class="rightPanel" id="menuPanelR">
+                    <!-- <a href="#">Click Para más</a> -->
+                    <a href="#" id="closePanel" class="closebtn" onclick="closePanelR()">&times;</a>
+                    <h1>Listado de eventos</h1>
+                    <input type="text" id="filterInputName" onkeyup="nameFilterEvent()">
+
+                    <button id="allEventsBtn" class="btnFilter" onclick="buttonFilterEvent('all')">Todos los eventos</button>
+                    <button id="neartEventsBtn" class="btnFilter" onclick="buttonFilterNearEvent()">Eventos cercanos</button>
+                    <label for="text">Tipos de eventos: </label>
+                    <button class="btnFilter" onclick="buttonFilterEvent('event')">Eventos</button>
+                    <button class="btnFilter" onclick="buttonFilterEvent('workshop')">Workshop</button>
+                    <button class="btnFilter" onclick="buttonFilterEvent('area')">Areas</button>
+                    <label for="text">Tematicas de eventos: </label>
+                    <button class="btnFilter" onclick="buttonFilterEvent('Taller de cocina')">Taller de cocina</button>
+                    <button class="btnFilter" onclick="buttonFilterEvent('Artistico')">Artistico</button>
+                    <button class="btnFilter" onclick="buttonFilterEvent('Para la comunidad')">Para la comunidad</button>
+                    <div class="panelContentR">
+                        <ul class="eventListTable">
+                        </ul>  
+                    </div>
+                    
+                </div>
+
 
             <div class="footer-bottom">&copy; Citt Maipu | Designed by Los de Colina 5</div>
         </div>
@@ -91,7 +89,6 @@
     <script>
         window.onload = () =>  {
             initMap();
-            initGps();  
         }
     </script>
 </body>
