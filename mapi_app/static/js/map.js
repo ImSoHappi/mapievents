@@ -385,15 +385,20 @@ function showDetailEvent(customInfo){
   detail = document.querySelector(".panelContent")
   var id = customInfo.split(',')[0];
   var typeEvent = customInfo.split(',')[1];
+  var imgsrc = "";
 
   fetch('api/events/detail/'+typeEvent+'/'+id)
   .then( res => res.json())
   .then(events => {
     detailEvent = document.createElement('div');
     detailEvent.id = "detailEvent";
+
+    if(events.image=="undefined") imgsrc = 'static/img/imgundefined.jpg';
+      else imgsrc = events.image;
+
     detailEvent.innerHTML = 
       `<h1>${events.name}</h1>
-      <img src='/media/workshops/2020/06/08/curso-online-pasteleria-reposteria_amp_primaria_1_1560502963.jpg' alt='caca'>
+      <img src='${imgsrc}' alt='caca'>
       <b><p>Comuna:</b> ${events.commune}</p>
       <b><p>Tipo de evento:</b> ${typeEvent} - ${events.type}</p>
       <b><p>Descripcion:</b>  ${events.description}</p>
@@ -427,7 +432,7 @@ async function showAllEvents(){
       listAll.id = "listEvents";
 
       if(events.image=="undefined") imgsrc = 'static/img/imgundefined.jpg';
-      else imgsrc = events.image;
+        else imgsrc = events.image;
 
       listAll.innerHTML = 
         `<h1 onclick="centerEventClick(${events.longitude}, ${events.latitude})">${events.name}</h1>
