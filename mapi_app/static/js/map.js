@@ -21,10 +21,15 @@ function initMap() {
     },
     disableDefaultUI: true,
     zoomControl: true,
+<<<<<<< HEAD
+=======
+    mapTypeControl: true,
+>>>>>>> parent of cfd4b66... caca
     streetViewControl: true,
   });
 
   directionsRenderer.setMap(map);
+<<<<<<< HEAD
 
   map.mapTypes.set('styleMap', new google.maps.StyledMapType(styleMap, { name: 'Mapi Map' }));
 
@@ -194,11 +199,17 @@ function rangoGps(){
     radius: 1500
   });  
 }
+=======
+  map.mapTypes.set('styleMap', new google.maps.StyledMapType(styleMap, { name: 'My Style' }));
+  addEvents()
+}
+
+>>>>>>> parent of cfd4b66... caca
 
 // Funcion que trae las cordenadas desde la api y las coloca en el mapa, junto con la animacion bounce y se le agrega una funcion click para abrir tarjeta
 function addEvents(){
   var markerEvents;
-  fetch('http://127.0.0.1:8000/api/events/list')
+  fetch('api/events/list')
   .then( res => res.json())
   .then(events => {
 
@@ -215,8 +226,13 @@ function addEvents(){
       });
       markerEvents.customInfo = events[i].id+","+events[i].table +","+ events[i].latitude+","+ events[i].longitude;
 
+<<<<<<< HEAD
       google.maps.event.addListener(markerEvents, 'click', function () {
         openPanel(this.customInfo);
+=======
+      markerEvents.addListener('click', function () {
+        abrirPanel();
+>>>>>>> parent of cfd4b66... caca
       });
       groupMarkers.push(markerEvents)
 
@@ -230,12 +246,17 @@ function addEvents(){
 
 
 // Funcion que abre y cierra la tarjeta de evento al hacerle click
+<<<<<<< HEAD
 function openPanel(customInfo){
   document.getElementById("menuPanel").style.width="50%";
   document.getElementById("map").style.width="50%";
   document.getElementById("map").style.marginLeft="50%";
   document.getElementById("map").style.transition= "all 1s";
   showDetailEvent(customInfo)
+=======
+function abrirPanel(){
+  document.getElementById("menuPanel").style.width="100%";
+>>>>>>> parent of cfd4b66... caca
 }
 function closePanel(){
   document.getElementById("menuPanel").style.width="0%";
@@ -302,6 +323,12 @@ function showError(error){
   var mes = "";
   switch(error.code) 
     {
+<<<<<<< HEAD
+=======
+    case error.PERMISSION_DENIED:
+      mes="Por favor concede permisos de GPS para acceder a toda la funcionalidad del mapa";
+      break;
+>>>>>>> parent of cfd4b66... caca
     case error.POSITION_UNAVAILABLE:
       mes="La posicion esta inhabilitada";
       alert(mes)
