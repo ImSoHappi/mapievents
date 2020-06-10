@@ -198,7 +198,7 @@ function rangoGps(){
 // Funcion que trae las cordenadas desde la api y las coloca en el mapa, junto con la animacion bounce y se le agrega una funcion click para abrir tarjeta
 function addEvents(){
   var markerEvents;
-  fetch('api/events/list')
+  fetch('http://127.0.0.1:8000/api/events/list')
   .then( res => res.json())
   .then(events => {
 
