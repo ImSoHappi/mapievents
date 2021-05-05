@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'f$r%qvb#ls982y=&-t_!+9@qp(+*9)53wm5quxn)1e9cag+&vp'
+SECRET_KEY = ''
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -77,16 +77,6 @@ WSGI_APPLICATION = 'mapi_website.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'dfd7r640c46fph',
-        'USER': 'jrazewundxndkm',
-        'PASSWORD': '375139bf8a9d9dd5e3594c317b0f6f8f74bc47fa4dd0d67e3c4660f0b136ca07',
-        'HOST': 'ec2-34-239-241-25.compute-1.amazonaws.com',
-        'PORT': '5432'
-    }
-}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
